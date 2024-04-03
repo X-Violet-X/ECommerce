@@ -1,5 +1,8 @@
 <button class="btn-news" (click)="navigateToOther()">Notizie in evidenza</button>
-<button class="btn-uomo">Uomo</button>
-<button class="btn-donna" (click)="navigateToDonna('/shop')">Donna</button>
-<button class="btn-accessori">Accessori</button> 
+    <button class="btn-uomo" (click)="funzioneProvaGet()">Uomo</button>
+    <button class="btn-donna" (click)="navigateToDonna('/shop')">Donna</button>
+    <button class="btn-accessori" (click)="navigateToDonna('/home')" (mouseenter)="showComponent()" (mouseleave)="hideComponent($event)">Accessori</button> 
 
+    <div *ngIf="isShowable" (mouseenter)="showComponent()" (mouseleave)="hideComponent($event)">
+        <header-drop-down-menu/>
+      </div>

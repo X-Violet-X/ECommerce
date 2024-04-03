@@ -6,7 +6,8 @@
     align-items: center;
     grid-auto-flow: column;
     grid-template-columns: auto .8fr .2fr;
-
+    max-height: 70px;
+    height: 70px;
     background: white;
 }
 
