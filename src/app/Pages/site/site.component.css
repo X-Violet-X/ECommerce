@@ -10,7 +10,7 @@ height: 100vh;
     object-fit: cover; 
 }
 .ciccio{
-    height: calc(100vh - 100px); 
+    height: calc(100vh - 120px); 
 
 }
 

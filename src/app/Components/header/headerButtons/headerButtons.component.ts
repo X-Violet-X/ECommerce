@@ -21,4 +21,8 @@ export class HeaderButtonsComponent {
   navigateToDonna(rotta:String) {
     this.router.navigate([rotta]); // Naviga alla rotta '/other'
   }
+
+
+//----------------------------------------------
+
 }

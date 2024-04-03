@@ -1,21 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body{
     margin: 0;
     font-family: Roboto, "Helvetica Nreue", sans-serif;
-    background: black;
+    background: rgb(90, 90, 90);
     color: white;
 }
 .box{
     box-shadow: black 0px 5px 15px;
     padding: 15px;
-
-
 }
 
 .hideScrollbar::-webkit-scrollbar{
     display: none;
     
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

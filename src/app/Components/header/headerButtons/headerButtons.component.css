@@ -13,6 +13,7 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
+  color: black;
 }
 
 button:hover{
