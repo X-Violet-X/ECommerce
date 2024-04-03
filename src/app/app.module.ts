@@ -8,7 +8,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderButtonsComponent } from './Components/header/headerButtons/headerButtons.component';
 import { HeaderSearchBarComponent } from './Components/header/headerSearchBar/headerSearchBar.component';
-import { ShopComponent } from './Pages/Shop/shop.component';
+
 import { ShopSiteComponent } from './Components/shopSite/shopSite.component';
 import { SideBarFilterComponent } from './Components/side-bar-filter/side-bar-filter.component';
 import { BreadCrumbBarComponent } from './Components/bread-crumb-bar/bread-crumb-bar.component';
@@ -19,7 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { PriceFilterComponent } from './Components/side-bar-filter/price-filter/price-filter.component';
 import { ShopCardsComponent } from './Components/shopSite/shop-cards/shop-cards.component';
-import { SidebarComponent } from './Components/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderDropDownMenuComponent } from './Components/header/header-drop-down-menu/header-drop-down-menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,6 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     FooterComponent,
     HeaderButtonsComponent,
     HeaderSearchBarComponent,
-    ShopComponent,
     ShopSiteComponent,
     SideBarFilterComponent,
     BreadCrumbBarComponent,
@@ -38,16 +39,20 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     ColorsFilterComponent,
     PriceFilterComponent,
     ShopCardsComponent,
-    SidebarComponent
+    HeaderDropDownMenuComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
