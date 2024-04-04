@@ -1,0 +1,13 @@
+<nav class="sidebar" [class.active]="isActive">
+    <ul>
+      <li><a href="products.html">Prodotti</a></li>
+      <li><a href="reports.html">Report</a></li>
+      <li><a href="settings.html">Impostazioni</a></li>
+      <li><a href="orders.html">Ordini</a></li>
+        <li class="theme-toggle">
+            <a href="#" (click)="toggleTheme('light')" *ngIf="isDarkTheme"><i class="far fa-sun"></i></a>
+            <a href="#" (click)="toggleTheme('dark')" *ngIf="!isDarkTheme"><i class="far fa-moon"></i></a>
+      </li>
+    </ul>
+  </nav>
+  

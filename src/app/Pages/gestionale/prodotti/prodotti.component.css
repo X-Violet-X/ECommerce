@@ -1,0 +1,97 @@
+.action-buttons button:hover {
+    background-color: #0056b3; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Testo bianco */
+  }
+  
+  /* Stile specifico per il bottone Elimina */
+  .action-buttons button:nth-child(2) {
+    background-color: #dc3545; /* Colore di sfondo rosso */
+  }
+  
+  .action-buttons button:nth-child(2):hover {
+    background-color: #c82333; /* Colore di sfondo rosso scuro al passaggio del mouse */
+  }
+  
+  #add-product-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px; /* Distanza dal titolo della tabella */
+  }
+  
+  #add-product-btn i {
+    margin-right: 5px;
+  }
+  
+  #add-product-btn:hover {
+    background-color: #004d00; /* Un verde leggermente più scuro per l'hover */
+  }
+
+  #filter-low-stock-btn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0; /* Spazio sopra e sotto il bottone */
+    border-radius: 5px; /* Bordi arrotondati */
+  }
+  
+  #filter-low-stock-btn:hover {
+    background-color: #45a049; /* Un verde leggermente più scuro per l'hover */
+  }
+  
+  #filter-low-stock-btn i {
+    margin-right: 5px;
+  }
+  #add-product-form {
+    background-color: #f8f8f8; /* Colore di sfondo */
+    border-radius: 8px; /* Bordi arrotondati */
+    padding: 20px; /* Spaziatura interna */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera per un effetto "elevato" */
+    max-width: 500px; /* Larghezza massima del form */
+    margin: 20px auto; /* Centra il form orizzontalmente */
+  }
+  
+  #add-product-form input[type="text"],
+  #add-product-form input[type="number"] {
+    width: calc(100% - 24px); /* Larghezza piena con compensazione per il padding */
+    padding: 10px 12px; /* Spaziatura interna */
+    margin-bottom: 15px; /* Margine inferiore */
+    border: 1px solid #ccc; /* Bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    box-sizing: border-box; /* Assicura che padding e bordo siano inclusi nella larghezza totale */
+  }
+  
+  #add-product-form button {
+    background-color: #005792; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    padding: 10px 15px; /* Spaziatura interna */
+    border: none; /* Rimuove il bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    cursor: pointer; /* Cambia il cursore */
+    font-size: 16px; /* Dimensione del testo */
+  }
+  
+  #add-product-form button:hover {
+    background-color: #013a63; /* Colore di sfondo al passaggio del mouse */
+  }
+  
+  /* Icona del Form */
+  .form-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Spazio tra l'icona e il testo */
+  }
+  
+  /* Titolo del Form */
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px; /* Spazio sotto il titolo */
+    font-size: 20px; /* Dimensione del testo */
+  }
+  

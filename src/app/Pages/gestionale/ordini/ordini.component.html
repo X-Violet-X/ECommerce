@@ -1,0 +1,23 @@
+<header>
+    Gestionale di Amministrazione - Ordini
+</header>
+
+<h1>Ordini</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID Ordine</th>
+      <th>Cliente</th>
+      <th>Stato</th>
+      <th>Totale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ordine of ordini">
+      <td>{{ ordine.id }}</td>
+      <td>{{ ordine.user.email }}</td>
+      <td>{{ ordine.stato }}</td>
+      <td>{{ ordine.prezzo }}</td>
+    </tr>
+  </tbody>
+</table>
