@@ -12,6 +12,11 @@ export class AppComponent implements OnInit {
 		
   user:any;
 
+  role = {
+    ADMIN : 'ADMIN',
+    GUEST : 'GUEST'
+  }
+
   ngOnInit(): void {
     this.authService.getUserProfile().subscribe({
       next: (data) => console.log('req user', data), 
@@ -20,9 +25,15 @@ export class AppComponent implements OnInit {
     this.authService.authSubject.subscribe((auth) => {
       // console.log('auth object value', auth);
       this.user = auth.user;
-      console.log("Utente loggato o Null " + this.user)
-      if(this.user != null){
-        this.router.navigate(['/home']);
+      //console.log("Utente loggato o Null " + this.user.role)
+      if(this.user){
+        if(this.user.role === this.role.ADMIN){
+          this.router.navigate(['/gestionale/ordini'])
+        }else
+        {
+           this.router.navigate(['/home']);
+        }
+       
       }
 
     });

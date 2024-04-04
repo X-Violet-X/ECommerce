@@ -25,7 +25,12 @@ import { LoginComponent } from './Pages/login/login.component';
 import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon'; 
+import {MatIconModule} from '@angular/material/icon';
+import { OrdiniComponent } from './Pages/gestionale/ordini/ordini.component';
+import { ImpostazioniComponent } from './Pages/gestionale/impostazioni/impostazioni.component';
+import { ProdottiComponent } from './Pages/gestionale/prodotti/prodotti.component';
+import { SidebarComponent } from './Pages/gestionale/sidebar/sidebar.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component'; 
 
 
 @NgModule({
@@ -45,8 +50,12 @@ import {MatIconModule} from '@angular/material/icon';
     PriceFilterComponent,
     ShopCardsComponent,
     HeaderDropDownMenuComponent,
-    LoginComponent
-
+    LoginComponent,
+    OrdiniComponent,
+    ImpostazioniComponent,
+    ProdottiComponent,
+    SidebarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
