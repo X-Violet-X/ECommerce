@@ -1,4 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Input } from '@angular/core';
+import { ApiService } from 'src/app/Services/api.service';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +8,12 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  isActive: boolean = false;
+
+ @Input() isActive: any;
+
   isDarkTheme: boolean = false;
 
-  constructor() { }
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
     // OnInit è qui se hai bisogno di inizializzare qualcosa al caricamento del componente
@@ -17,7 +21,7 @@ export class SidebarComponent implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent): void {
-    this.isActive = e.pageX < 50;
+    // this.isActive = e.pageX < 50;
   }
 
   toggleTheme(theme: string): void {
@@ -31,4 +35,9 @@ export class SidebarComponent implements OnInit {
       document.body.classList.remove('dark-theme');
     }
   }
+
+  closeNav(){
+    this.isActive = false;
+  }
+
 }

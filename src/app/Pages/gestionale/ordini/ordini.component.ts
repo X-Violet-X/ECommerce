@@ -11,6 +11,8 @@ export class OrdiniComponent implements OnInit {
 
   ordini: Ordine[] = [];
 
+  isActive = false;
+
   constructor(private ordiniService: OrdiniService) { }
 
   ngOnInit(): void {
@@ -18,9 +20,17 @@ export class OrdiniComponent implements OnInit {
   }
 
   caricaOrdini(): void {
-    this.ordiniService.getOrdini().subscribe((ordini: Ordine[]) => {
-      this.ordini = ordini;
+    this.ordiniService.getOrdini().subscribe((ordin: Ordine[]) => {
+      this.ordini = ordin;
+      
     });
   }
+
+  onClick(){
+    this.isActive = !this.isActive;
+
+  }
+
+  
 
 }

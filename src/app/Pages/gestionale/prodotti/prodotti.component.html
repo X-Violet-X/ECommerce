@@ -2,19 +2,19 @@
     Gestionale di Amministrazione - Ordini
 </header>
 <body>
-    <nav class="sidebar">
+    <!-- <nav class="sidebar">
       <ul>
-        <li><a href="orders.html">Ordini</a></li>
+        <li><a >Ordini</a></li>
         <li><a href="reports.html">Report</a></li>
         <li><a href="settings.html">Impostazioni</a></li>
       </ul>
-    </nav>
+    </nav> -->
     <div class="main-content">
       <h1>Prodotti</h1>
       <table>
         <thead>
           <tr>
-            <th>ID Prodotto</th>
+            <th>Codice Articolo</th>
             <th>Nome</th>
             <th>Categoria</th>
             <th>Prezzo</th>
@@ -23,6 +23,16 @@
           </tr>
         </thead>
         <tbody id="product-table-body">
+          <tr  *ngFor="let prodotto of prodItem">
+            <td>{{prodotto.id}}</td>
+            <td>{{prodotto.nome}}</td>
+            <td>{{prodotto.categoria}}</td>
+            <td>{{prodotto.prezzo}}</td>
+            <td>{{prodotto}}</td>
+            <td> <mat-icon>edit</mat-icon> <mat-icon>add</mat-icon> </td>
+            <td>{{prodotto}}</td>
+
+          </tr>
           <!-- Le righe della tabella saranno aggiunte dinamicamente qui -->
         </tbody>
       </table>

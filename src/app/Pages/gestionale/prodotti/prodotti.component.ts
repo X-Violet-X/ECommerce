@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/Services/services/product.service';
 
 interface Prodotto {
   id: string;
@@ -15,40 +16,24 @@ interface Prodotto {
 })
 export class ProdottiComponent implements OnInit {
 
-  prodotti: Prodotto[] = [];
+  prodItem: Prodotto[] = [];
+
+  constructor(private prodottiService: ProductService){
+
+  }
+
 
   ngOnInit() {
-    this.renderProducts();
+    this.caricaOrdini();
   }
 
-  renderProducts(): void {
-    const tableBody: HTMLElement | null = document.getElementById('product-table-body');
-    if (tableBody) {
-      tableBody.innerHTML = '';
-      this.prodotti.forEach((prodotto: Prodotto) => {
-        const row: string = `
-          <tr>
-            <td>${prodotto.id}</td>
-            <td>${prodotto.nome}</td>
-            <td>${prodotto.categoria}</td>
-            <td>${prodotto.prezzo}</td>
-            <td>${prodotto.disponibilita}</td>
-            <td class="action-buttons">
-              <button (click)="editProduct('${prodotto.id}')">Modifica</button>
-              <button (click)="deleteProduct('${prodotto.id}')">Elimina</button>
-              <!-- Il pulsante Aggiungi Prodotto non ha senso in questo contesto -->
-            </td>
-          </tr>
-        `;
-        tableBody.innerHTML += row;
-      });
-    }
+  caricaOrdini(): void {
+    this.prodottiService.getAllProducts().subscribe((state: any) => {
+      this.prodItem = state.prodotti;
+      console.log(this.prodItem);
+    });
   }
 
-  deleteProduct(productId: string): void {
-    this.prodotti = this.prodotti.filter((prodotto: Prodotto) => prodotto.id !== productId);
-    this.renderProducts();
-  }
 
   editProduct(productId: string): void {
     // La logica di modifica dovrebbe essere gestita diversamente in un'app Angular, possibilmente utilizzando un form

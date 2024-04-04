@@ -2,6 +2,11 @@
     Gestionale di Amministrazione - Ordini
 </header>
 
+<button style="z-index: 20000; background-color: red; width: 300px;" (click)="onClick()">NAVBAR</button>
+<div *ngIf="isActive">
+<app-sidebar [isActive]="isActive"></app-sidebar>
+</div>
+
 <h1>Ordini</h1>
 <table>
   <thead>
