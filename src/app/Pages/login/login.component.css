@@ -1,12 +1,24 @@
 :host {
-  background-color: blueviolet;
-  background-image: url('/assets/bluee.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative; /* Rendere l'elemento genitore relativo */
   display: grid;
   align-items: center;
   justify-items: center;
 }
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('/assets/dark.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); 
+  z-index: -1; 
+}
+
 
 .login-form {
   display: grid;

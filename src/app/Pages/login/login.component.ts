@@ -27,7 +27,7 @@ export class LoginComponent {
   });
 
   signIn() {
-    this.authService.login(this.loginForm.value).subscribe({
+    this.authService.login({email:this.username, password: this.password }).subscribe({
       next: (response) => {
         localStorage.setItem("jwt", response.jwt);
         this.authService.getUserProfile().subscribe();
@@ -41,7 +41,7 @@ export class LoginComponent {
 }
 
     signUp(): void {
-    this.authService.register( this.loginForm.value )
+    this.authService.register( {email:this.username, password: this.password} )
       .subscribe(response => {
         localStorage.setItem('jwt', response.jwt);
         this.authService.getUserProfile().subscribe();
