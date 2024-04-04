@@ -13,6 +13,8 @@
 
 .logo {
     width: 155px;
+    cursor: pointer;
+
 }
 
 .right-header{
@@ -31,6 +33,7 @@
     margin-right: 15px;
     cursor: pointer;
 }
+
 
 .btn-accedi,
 .btn-logout{

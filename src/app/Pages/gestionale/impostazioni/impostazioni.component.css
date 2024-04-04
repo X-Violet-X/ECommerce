@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background-color: #005792;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    bottom: 0;
+    background-color: #013a63;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 20px 0;
+  }
+
+  .sidebar ul li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .sidebar ul li a:hover {
+    background-color: #0275d8;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+
+  /* Stili aggiuntivi per il tema scuro */
+  .dark-theme {
+    background-color: #333;
+    color: #ffffff;
+  }
+
+  .dark-theme input[type="password"], .dark-theme select, .dark-theme input[type="submit"] {
+    background-color: #555;
+    color: #ffffff;
+  }

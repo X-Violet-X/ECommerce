@@ -14,7 +14,7 @@ export class HeaderButtonsComponent {
   private timeoutId: any;
 
   constructor(private router: Router, private apiService: ApiService, private elementRef: ElementRef) { }
-
+  
 
   navigateToOther() {
     this.router.navigate(['/shop']); // Naviga alla rotta '/other'

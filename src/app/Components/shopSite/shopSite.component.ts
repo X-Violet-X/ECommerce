@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-shop-site',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopSite.component.css']
 })
 export class ShopSiteComponent {
+  products:any;
 
+  setProducts(products:any){
+   this.products = products;
+  }
 }

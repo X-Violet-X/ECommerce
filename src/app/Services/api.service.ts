@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class ApiService {
 
   domain:String="http://localhost:5454"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   // GET
   public apiGET(url: string): Observable<any> {
@@ -21,26 +22,32 @@ export class ApiService {
     return this.http.post(url, body);
   }
 
-  public login(username: string, password: string): Observable<any> {
-    const endpoint = '/auth/signin'; // L'endpoint per il login
 
-    const body = {
-      username: username,
-      password: password
-    };
-
-    return this.apiPOST(`${this.domain}${endpoint}`, body);
+  navigateTo(rotta:String) {
+    this.router.navigate([rotta]); 
   }
 
 
-  public registrati(username: string, password: string): Observable<any> {
-    const endpoint = '/auth/signup'; // L'endpoint per il login
+  // public login(username: string, password: string): Observable<any> {
+  //   const endpoint = '/auth/signin'; // L'endpoint per il login
 
-    const body = {
-      username: username,
-      password: password
-    };
+  //   const body = {
+  //     username: username,
+  //     password: password
+  //   };
 
-    return this.apiPOST(`${this.domain}${endpoint}`, body);
-  }
+  //   return this.apiPOST(`${this.domain}${endpoint}`, body);
+  // }
+
+
+  // public registrati(username: string, password: string): Observable<any> {
+  //   const endpoint = '/auth/signup'; // L'endpoint per il login
+
+  //   const body = {
+  //     username: username,
+  //     password: password
+  //   };
+
+  //   return this.apiPOST(`${this.domain}${endpoint}`, body);
+  // }
 }

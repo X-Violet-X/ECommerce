@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
   selector: 'check-box-filter',
@@ -6,9 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./check-box-filter.component.css']
 })
 export class CheckBoxFilterComponent {
+  @Output() pippo: EventEmitter<any> = new EventEmitter<any>();
 
+  constructor(private apiService: ApiService) { }
 
-  stampaInConsole(){
-    console.log("ciao");
+  fetchProducts(categoria: string): void {
+    const url = `http://localhost:5454/products/findByCategoria/${categoria}`; 
+    this.apiService.apiGET(url).subscribe(
+      (response: any) => {
+        this.pippo.emit(response) 
+      },
+      (error: any) => {
+        console.log('Errore durante il recupero dei prodotti:', error);
+      }
+    );
   }
+
+
 }
