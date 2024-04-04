@@ -32,6 +32,7 @@ export class LoginComponent {
         localStorage.setItem("jwt", response.jwt);
         this.authService.getUserProfile().subscribe();
         console.log("login success", response)
+        window.location.reload();
       },
       error : (error) => {
         console.log(error.error.trace);
@@ -46,6 +47,7 @@ export class LoginComponent {
         localStorage.setItem('jwt', response.jwt);
         this.authService.getUserProfile().subscribe();
         console.log('signup success', response);
+        window.location.reload();
       });
   }
 }

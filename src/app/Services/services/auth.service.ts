@@ -39,6 +39,9 @@ export class AuthService {
   logout(): void {
     localStorage.clear();
     this.authSubject.next({});
-  }
+    setTimeout(() => {
+      window.location.reload();
+    }, 125);
+  } 
 
 }

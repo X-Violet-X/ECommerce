@@ -3,8 +3,24 @@
 
 <div class="right-header">
   <app-header-search-bar />
-  <button class="btn-accedi">Accedi</button>
-  <button class="btn-registrati">Registrati</button>
+  <button class="btn-accedi" *ngIf="!userLogged()" routerLink="/login">
+    <div class="container-auth">
+      <div><mat-icon>login</mat-icon></div>
+      <div>Login</div>
+    </div>
+  </button>
+  <!-- <button class="btn-registrati" *ngIf="!userLogged()" routerLink="/login">Registrati</button> -->
+  <div class="button-row">
+    <button class="btn-logout" (click)="logout()" *ngIf="userLogged()" routerLink="/login">
+      <div class="container-auth">
+        <div><mat-icon>logout</mat-icon></div>
+        <div>Logout</div>
+      </div>
+    </button>
+  
+    <!-- Aggiungi qui l'altro bottone -->
+  </div>
+  
   <button class="shopping-cart"></button>
 
 </div>

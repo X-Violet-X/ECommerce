@@ -18,9 +18,15 @@ export class AppComponent implements OnInit {
       error: (error) => console.log('error', error),
     });
     this.authService.authSubject.subscribe((auth) => {
-      console.log('auth object value', auth);
+      // console.log('auth object value', auth);
       this.user = auth.user;
+      console.log("Utente loggato o Null " + this.user)
+      if(this.user != null){
+        this.router.navigate(['/home']);
+      }
+
     });
+
   }
 
 }

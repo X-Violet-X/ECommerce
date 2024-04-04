@@ -9,10 +9,12 @@ import { Router } from '@angular/router'; // Importa il Router
 export class SiteComponent implements OnInit  {
   private slideIndex = 0;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
     this.showSlides();
+    
   }
 
   private showSlides(): void {
