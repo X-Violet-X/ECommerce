@@ -8,7 +8,6 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderButtonsComponent } from './Components/header/headerButtons/headerButtons.component';
 import { HeaderSearchBarComponent } from './Components/header/headerSearchBar/headerSearchBar.component';
-
 import { ShopSiteComponent } from './Components/shopSite/shopSite.component';
 import { SideBarFilterComponent } from './Components/side-bar-filter/side-bar-filter.component';
 import { BreadCrumbBarComponent } from './Components/bread-crumb-bar/bread-crumb-bar.component';
@@ -21,7 +20,13 @@ import { PriceFilterComponent } from './Components/side-bar-filter/price-filter/
 import { ShopCardsComponent } from './Components/shopSite/shop-cards/shop-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderDropDownMenuComponent } from './Components/header/header-drop-down-menu/header-drop-down-menu.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './Pages/login/login.component';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon'; 
+
 
 @NgModule({
   declarations: [
@@ -40,6 +45,7 @@ import { FormsModule } from '@angular/forms';
     PriceFilterComponent,
     ShopCardsComponent,
     HeaderDropDownMenuComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -48,7 +54,12 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatSliderModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [
   
