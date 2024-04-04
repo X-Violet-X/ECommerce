@@ -8,7 +8,8 @@ import { Observable, BehaviorSubject, tap  } from 'rxjs';
 export class AuthService {
 
   private baseUrl = 'http://localhost:5454';
-  private authSubject = new BehaviorSubject<any>({ user: null });
+
+  authSubject = new BehaviorSubject<any>({ user: null, });
 
   constructor(private http: HttpClient) { }
 

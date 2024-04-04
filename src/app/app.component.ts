@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './Services/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,13 +8,20 @@ import { AuthService } from './Services/services/auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'ECommerce';
-  constructor(public authService:AuthService) {}
+  constructor(public authService:AuthService, private router : Router) {}
 		
-		ngOnInit(){
-			this.authService.getUserProfile().subscribe({
-				next:data=>console.log("req user", data),
-				error:error=>console.log("errorLUCA",error)
-			});
+  user:any;
+
+  ngOnInit(): void {
+    this.authService.getUserProfile().subscribe({
+      next: (data) => console.log('req user', data), 
+      error: (error) => console.log('error', error),
+    });
+    this.authService.authSubject.subscribe((auth) => {
+      console.log('auth object value', auth);
+      this.user = auth.user;
+    });
+  }
 
 }
-}
+
