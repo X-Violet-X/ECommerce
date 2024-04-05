@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/Services/services/auth.service';
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  
+
 })
 export class LoginComponent {
 
@@ -21,28 +21,28 @@ export class LoginComponent {
   //   password:new FormControl('', [Validators.required]),
   // });
 
-  loginForm = new FormGroup({     
-    email: new FormControl("", [Validators.required, Validators.email]),  
-    password: new FormControl("", [Validators.required,Validators.minLength(8),]),
+  loginForm = new FormGroup({
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8),]),
   });
 
   signIn() {
-    this.authService.login({email:this.username, password: this.password }).subscribe({
+    this.authService.login({ email: this.username, password: this.password }).subscribe({
       next: (response) => {
         localStorage.setItem("jwt", response.jwt);
         this.authService.getUserProfile().subscribe();
         console.log("login success", response)
         window.location.reload();
       },
-      error : (error) => {
+      error: (error) => {
         console.log(error.error.trace);
       }
-  })
-    
-}
+    })
 
-    signUp(): void {
-    this.authService.register( {email:this.username, password: this.password} )
+  }
+
+  signUp(): void {
+    this.authService.register({ email: this.username, password: this.password })
       .subscribe(response => {
         localStorage.setItem('jwt', response.jwt);
         this.authService.getUserProfile().subscribe();

@@ -1,7 +1,7 @@
-:host{
+:host {
   display: flex;
   justify-content: center;
-  
+
 }
 
 .BUBU {
@@ -16,7 +16,6 @@
   align-items: center;
   cursor: pointer;
   font-size: 16px;
-  /* personalizza a tuo piacimento */
   color: black;
 }
 
@@ -28,7 +27,7 @@
   /* position: relative; */
   display: inline-block;
   width: 16px;
-  height:16px;
+  height: 16px;
   background-color: #fff;
   border: 2px solid #000000;
   border-radius: 50%;
@@ -43,22 +42,15 @@
 
 .round-checkbox input:checked+.checkmark {
   background-color: black;
-  /* Cambia il colore di sfondo quando la checkbox è selezionata */
   border-color: black;
-  /* Cambia il colore del bordo quando la checkbox è selezionata */
 }
 
 .round-checkbox .checkmark:after {
   left: 7px;
-  /* regola la posizione del segno di spunta */
   top: 3px;
-  /* regola la posizione del segno di spunta */
   width: 6px;
-  /* regola la dimensione del segno di spunta */
   height: 12px;
-  /* regola la dimensione del segno di spunta */
   border: solid #333;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-  /* ruota il segno di spunta di 45 gradi */
 }

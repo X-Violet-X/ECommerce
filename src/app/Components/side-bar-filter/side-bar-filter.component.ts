@@ -1,4 +1,4 @@
-import { Component,Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar-filter',
@@ -8,7 +8,7 @@ import { Component,Output, EventEmitter} from '@angular/core';
 export class SideBarFilterComponent {
   @Output() pippoUno: EventEmitter<any> = new EventEmitter<any>();
 
-  pippo(pippa:any){
-   this.pippoUno.emit(pippa);
+  pippo(pippa: any) {
+    this.pippoUno.emit(pippa);
   }
 }

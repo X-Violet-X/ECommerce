@@ -1,11 +1,12 @@
-:host{
+:host {
   display: flex;
   justify-content: center;
 }
+
 .btn-news,
 .btn-uomo,
 .btn-donna,
-.btn-accessori{
+.btn-accessori {
   border: none;
   background-color: inherit;
   padding: 14px 28px;
@@ -16,6 +17,6 @@
   color: black;
 }
 
-button:hover{
-  color: rgb(160, 255, 173);
+button:hover {
+  color: rgb(177, 169, 255);
 }

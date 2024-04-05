@@ -7,27 +7,27 @@ import { ApiService } from 'src/app/Services/api.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
-  constructor(private authService: AuthService, private apiService: ApiService){
+export class HeaderComponent implements OnInit {
+  constructor(private authService: AuthService, private apiService: ApiService) {
 
   }
-  
-  user : any;
+
+  user: any;
   ngOnInit(): void {
     this.authService.getUserProfile().subscribe({
-      next : (data) => {
+      next: (data) => {
         this.user = data;
         console.log("Header : utente -> " + this.user.value);
         // this.userLogged();
       },
-      error : (error) => {
+      error: (error) => {
         console.log("Errore " + error.error.message)
       }
     })
-  } 
+  }
 
-  userLogged() : boolean{
-    return this.user  !== undefined ? true : false;
+  userLogged(): boolean {
+    return this.user !== undefined ? true : false;
   }
 
   navigateTo(rotta: string) {
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit{
   //   this.isShowable = false; // Nascondi il componente
   // }
 
-  logout(){
+  logout() {
     this.authService.logout()
   }
 }

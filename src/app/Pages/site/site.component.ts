@@ -6,15 +6,15 @@ import { Router } from '@angular/router'; // Importa il Router
   templateUrl: './site.component.html',
   styleUrls: ['./site.component.css']
 })
-export class SiteComponent implements OnInit  {
+export class SiteComponent implements OnInit {
   private slideIndex = 0;
 
   constructor() {
-   }
+  }
 
   ngOnInit(): void {
     this.showSlides();
-    
+
   }
 
   private showSlides(): void {
