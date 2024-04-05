@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/Services/services/auth.service';
+import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { AuthService } from 'src/app/Services/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService, private apiService: ApiService){
 
   }
   
@@ -29,7 +30,9 @@ export class HeaderComponent implements OnInit{
     return this.user  !== undefined ? true : false;
   }
 
-  
+  navigateTo(rotta: string) {
+    this.apiService.navigateTo(rotta);
+  }
 
 
   // visibility() {

@@ -23,7 +23,7 @@ export class ProductService {
 
   getAllProducts(): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.get(`${this.baseUrl}/api/products`, {headers});
+    return this.http.get(`${this.baseUrl}/products/getAll`, {headers});
   }
 
   getProductById(productId: number): Observable<any> {

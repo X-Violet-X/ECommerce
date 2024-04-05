@@ -9,13 +9,18 @@
         <li><a href="settings.html">Impostazioni</a></li>
       </ul>
     </nav> -->
+
     <div class="main-content">
+      <button (click)="showAddProductForm()" id="add-product-btn"><i class="fas fa-plus"> <mat-icon>add</mat-icon></i> Aggiungi Prodotto</button>
+      <button (click)="filtraEsaurimento()" id="filter-low-stock-btn"><i class="fas fa-filter"> <mat-icon>like</mat-icon> </i> Filtra Esaurimento</button>
       <h1>Prodotti</h1>
       <table>
         <thead>
           <tr>
             <th>Codice Articolo</th>
             <th>Nome</th>
+            <th>Taglia</th>
+            <th>Colore</th>
             <th>Categoria</th>
             <th>Prezzo</th>
             <th>Disponibilità</th>
@@ -24,13 +29,17 @@
         </thead>
         <tbody id="product-table-body">
           <tr  *ngFor="let prodotto of prodItem">
-            <td>{{prodotto.id}}</td>
+            <td>{{prodotto.codice_articolo}}</td>
             <td>{{prodotto.nome}}</td>
+            <td>{{prodotto.taglia}}</td>
+            <td>{{prodotto.colore}}</td>
             <td>{{prodotto.categoria}}</td>
             <td>{{prodotto.prezzo}}</td>
-            <td>{{prodotto}}</td>
-            <td> <mat-icon>edit</mat-icon> <mat-icon>add</mat-icon> </td>
-            <td>{{prodotto}}</td>
+            <td>{{prodotto.quantita}}</td>
+            <td class="action-buttons">
+              <button onclick="editProduct('${prodotto.id}')"><i class="fas fa-edit"> <mat-icon>edit</mat-icon> </i></button>
+              <button onclick="deleteProduct('${prodotto.id}')"><i class="fas fa-trash"><mat-icon>delete</mat-icon> </i></button>
+            </td>
 
           </tr>
           <!-- Le righe della tabella saranno aggiunte dinamicamente qui -->
