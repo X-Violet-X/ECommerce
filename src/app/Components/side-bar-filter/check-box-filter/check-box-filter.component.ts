@@ -12,7 +12,7 @@ export class CheckBoxFilterComponent {
   constructor(private apiService: ApiService) { }
 
   fetchProducts(categoria: string): void {
-    const url = `http://localhost:5454/products/findByCategoria/${categoria}`;
+    const url = `http://localhost:5454/products/getAllFe/F/${categoria}`;
     this.apiService.apiGET(url).subscribe(
       (response: any) => {
         this.pippo.emit(response)
