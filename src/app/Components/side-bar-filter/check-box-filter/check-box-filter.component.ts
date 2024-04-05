@@ -12,10 +12,10 @@ export class CheckBoxFilterComponent {
   constructor(private apiService: ApiService) { }
 
   fetchProducts(categoria: string): void {
-    const url = `http://localhost:5454/products/findByCategoria/${categoria}`; 
+    const url = `http://localhost:5454/products/findByCategoria/${categoria}`;
     this.apiService.apiGET(url).subscribe(
       (response: any) => {
-        this.pippo.emit(response) 
+        this.pippo.emit(response)
       },
       (error: any) => {
         console.log('Errore durante il recupero dei prodotti:', error);

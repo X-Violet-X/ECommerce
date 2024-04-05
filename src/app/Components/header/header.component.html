@@ -1,4 +1,4 @@
-<img class="logo" src="\assets\logo.png" (click)="navigateTo('/home')"  />
+<img class="logo" src="\assets\logo2.png" (click)="navigateTo('/home')" />
 <app-header-buttons class="headerButtons" />
 
 <div class="right-header">
@@ -11,16 +11,18 @@
   </button>
   <!-- <button class="btn-registrati" *ngIf="!userLogged()" routerLink="/login">Registrati</button> -->
   <div class="button-row">
-    <button class="btn-logout" (click)="logout()" *ngIf="userLogged()" routerLink="/login">
+    <button
+      class="btn-logout"
+      (click)="logout()"
+      *ngIf="userLogged()"
+      routerLink="/login"
+    >
       <div class="container-auth">
         <div><mat-icon>logout</mat-icon></div>
         <div>Logout</div>
       </div>
     </button>
-  
-    <!-- Aggiungi qui l'altro bottone -->
   </div>
-  
-  <button class="shopping-cart"></button>
 
+  <button class="shopping-cart"></button>
 </div>

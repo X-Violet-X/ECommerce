@@ -17,7 +17,7 @@
 
 }
 
-.right-header{
+.right-header {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -36,8 +36,8 @@
 
 
 .btn-accedi,
-.btn-logout{
-   
+.btn-logout {
+
     border: none;
     background-color: inherit;
     padding: 14px 10px;
@@ -48,9 +48,8 @@
     color: black;
 }
 
-.container-auth{
+.container-auth {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-

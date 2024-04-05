@@ -14,52 +14,51 @@ export class HeaderButtonsComponent {
   private timeoutId: any;
 
   constructor(private router: Router, private apiService: ApiService, private elementRef: ElementRef) { }
-  
+
 
   navigateToOther() {
-    this.router.navigate(['/shop']); // Naviga alla rotta '/other'
+    this.router.navigate(['/shop']);
   }
 
   funzioneProvaGet() {
     this.apiService.apiGET('http://localhost:5454/products/getAll').subscribe(
       (response) => {
-        console.log(response); 
+        console.log(response);
       },
       (error) => {
-        console.error(error); 
+        console.error(error);
       }
     );
   }
 
-  navigateToDonna(rotta:String) {
-    this.router.navigate([rotta]); // Naviga alla rotta '/other'
+  navigateToDonna(rotta: String) {
+    this.router.navigate([rotta]);
   }
 
 
-//----------------------------------------------
+  //----------------------------------------------
 
-showComponent() {
-  clearTimeout(this.timeoutId); // Cancella eventuali timeout precedenti
-  this.isShowable = true; // Mostra il componente
-}
+  showComponent() {
+    clearTimeout(this.timeoutId);
+    this.isShowable = true;
+  }
 
-hideComponent(event: MouseEvent) {
-  this.timeoutId = setTimeout(() => {
-    if (!this.isMouseInside(event)) {
-      // Nascondi il componente solo se il mouse non è all'interno
-      this.isShowable = false;
-    }
-  }, 125); // 500 millisecondi di timeout prima di nascondere il componente
-}
+  hideComponent(event: MouseEvent) {
+    this.timeoutId = setTimeout(() => {
+      if (!this.isMouseInside(event)) {
+        this.isShowable = false;
+      }
+    }, 125);
+  }
 
-isMouseInside(event: MouseEvent): boolean {
-  const componentRect = this.elementRef.nativeElement.getBoundingClientRect();
-  return (
-    componentRect.left <= event.clientX &&
-    componentRect.right >= event.clientX &&
-    componentRect.top <= event.clientY &&
-    componentRect.bottom >= event.clientY
-  );
-}
+  isMouseInside(event: MouseEvent): boolean {
+    const componentRect = this.elementRef.nativeElement.getBoundingClientRect();
+    return (
+      componentRect.left <= event.clientX &&
+      componentRect.right >= event.clientX &&
+      componentRect.top <= event.clientY &&
+      componentRect.bottom >= event.clientY
+    );
+  }
 }
 
