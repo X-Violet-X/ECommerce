@@ -1,19 +1,17 @@
  <header>
-    <div id="sidebar-toggle" onclick="toggleSidebar()">
-      <i class="fas fa-bars"></i>
+    <div id="sidebar-toggle">
+      <i (click)="onClick()" class="fas fa-bars"></i>
     </div>
-    Gestionale di Amministrazione - Prodotti
+    Gestionale di Amministrazione - Ordini
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </header>
 <app-sidebar></app-sidebar>
 
   
 
-<button style="z-index: 20000; background-color: red; width: 300px;" (click)="onClick()">NAVBAR</button>
 <div *ngIf="isActive">
 <app-sidebar [isActive]="isActive"></app-sidebar>
 </div>
-
 <h1>Ordini</h1>
 <table>
   <thead>

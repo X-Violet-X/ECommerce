@@ -30,7 +30,4 @@ export class OrdiniComponent implements OnInit {
     this.isActive = !this.isActive;
 
   }
-
-  
-
 }

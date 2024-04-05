@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit, Input } from '@angular/core';
+// Assicurati che il percorso qui corrisponda esattamente alla posizione del file del tuo ApiService
 import { ApiService } from 'src/app/Services/api.service';
-
 
 @Component({
   selector: 'app-sidebar',
@@ -9,35 +9,44 @@ import { ApiService } from 'src/app/Services/api.service';
 })
 export class SidebarComponent implements OnInit {
 
- @Input() isActive: any;
+  @Input() isActive: boolean = false; 
 
   isDarkTheme: boolean = false;
 
-  constructor(private apiService:ApiService) { }
-
-  ngOnInit(): void {
-    // OnInit è qui se hai bisogno di inizializzare qualcosa al caricamento del componente
-  }
+  constructor(private apiService: ApiService) { }
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent): void {
-    // this.isActive = e.pageX < 50;
+    this.isActive = e.pageX < 50; 
   }
-
-  toggleTheme(theme: string): void {
-    this.isDarkTheme = (theme === 'dark');
-    // Considera di spostare la logica di cambio tema in un servizio se usata in più componenti
-    if (this.isDarkTheme) {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
-    } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-    }
-  }
-
-  closeNav(){
+  
+  closeNav(): void {
     this.isActive = false;
   }
 
+  ngOnInit(): void {
+    this.loadTheme();
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+    this.applyTheme();
+  }
+
+  applyTheme(): void {
+    const themeClass = this.isDarkTheme ? 'dark-theme' : 'light-theme';
+    document.body.classList.remove('dark-theme', 'light-theme'); // Rimuove entrambe le classi per evitare conflitti
+    document.body.classList.add(themeClass);
+    this.saveTheme();
+  }
+
+  saveTheme(): void {
+    localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+  }
+
+  loadTheme(): void {
+    const savedTheme = localStorage.getItem('theme');
+    this.isDarkTheme = savedTheme === 'dark';
+    this.applyTheme(); 
+  }
 }
