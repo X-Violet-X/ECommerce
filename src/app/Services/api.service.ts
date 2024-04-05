@@ -26,8 +26,11 @@ export class ApiService {
   navigateTo(rotta:String) {
     this.router.navigate([rotta]); 
   }
-
-
+  
+  
+  deleteProduct(productId: string): Observable<any> {
+    return this.http.delete(`http://localhost:5454/api/products/delete/${productId}`);
+  }
   // public login(username: string, password: string): Observable<any> {
   //   const endpoint = '/auth/signin'; // L'endpoint per il login
 

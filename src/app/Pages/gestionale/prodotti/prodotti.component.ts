@@ -55,6 +55,26 @@ export class ProdottiComponent implements OnInit {
     // La logica di modifica dovrebbe essere gestita diversamente in un'app Angular, possibilmente utilizzando un form
   }
 
+  deleteProduct(productId: string): void {
+    if (!confirm("Sei sicuro di voler eliminare questo prodotto?")) {
+      return;
+    }
+  
+    
+    this.apiService.deleteProduct(productId).subscribe({
+      next: (response) => {
+        console.log('Prodotto eliminato con successo:', response);
+  
+        this.caricaOrdini();
+      },
+      error: (error) => {
+        console.error('Errore durante leliminazione del prodotto:', error);
+      }
+    });
+  }
+  
+  
+
   addProduct(): void {
     
   }

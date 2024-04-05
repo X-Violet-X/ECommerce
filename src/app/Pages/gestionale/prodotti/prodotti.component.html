@@ -31,8 +31,8 @@
             <td>{{prodotto.prezzo}}</td>
             <td>{{prodotto.quantita}}</td>
             <td class="action-buttons">
-              <button onclick="editProduct('${prodotto.id}')"><i class="fas fa-edit"> <mat-icon>edit</mat-icon> </i></button>
-              <button onclick="deleteProduct('${prodotto.id}')"><i class="fas fa-trash"><mat-icon>delete</mat-icon> </i></button>
+              <button (click)="editProduct(prodotto.id.toString())"><i class="fas fa-edit"> <mat-icon>edit</mat-icon> </i></button>
+              <button (click)="deleteProduct(prodotto.id.toString())"><i class="fas fa-trash"><mat-icon>delete</mat-icon> </i></button>              
             </td>
 
           </tr>
