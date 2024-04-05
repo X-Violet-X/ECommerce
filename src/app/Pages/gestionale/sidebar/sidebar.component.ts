@@ -49,4 +49,8 @@ export class SidebarComponent implements OnInit {
     this.isDarkTheme = savedTheme === 'dark';
     this.applyTheme(); 
   }
+  showAddProductForm(){
+    return 0;
+
+  }
 }

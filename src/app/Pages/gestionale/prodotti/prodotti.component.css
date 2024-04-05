@@ -18,6 +18,25 @@ header {
   padding-left: 0;
 }
 
+/* Stili unificati per i bottoni */
+#add-product-btn, #filter-low-stock-btn {
+  background-color: #4CAF50; /* Verde vivace */
+  color: white;
+  padding: 10px 20px; /* Uniforma lo spazio interno */
+  font-size: 16px; /* Dimensione del testo */
+  border: none;
+  cursor: pointer;
+  margin-bottom: 18px; /* Distanza uniforme */
+  transition: background-color 0.3s, box-shadow 0.2s; /* Transizione fluida */
+  border-radius: 5px; /* Bordi arrotondati */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombreggiatura leggera */
+}
+
+#add-product-btn:hover, #filter-low-stock-btn:hover {
+  background-color: #45a049; /* Un verde leggermente più scuro per l'hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombreggiatura più pronunciata */
+}
+
 .sidebar ul li a {
   display: block;
   padding: 10px;
@@ -59,23 +78,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #003d5b;
 }
-/* Stile base per la sidebar */
-.sidebar {
-  position: fixed;
-  left: -250px; /* Nasconde la sidebar fuori dal viewport */
-  width: 250px;
-  height: 100%;
-  background-color: #005792;
-  transition: left 0.5s; /* Anima la transizione */
-  padding-top: 60px; /* Spazio dal top */
-  z-index: 1000; /* Assicurati che la sidebar sia sopra gli altri elementi */
-}
-
-/* Stile per la sidebar quando è estesa */
-.sidebar:hover,
-.sidebar.active {
-  left: 0; /* Mostra la sidebar */
-}
 
 /* Reset di base per rimuovere margini e padding predefiniti */
 * {
@@ -95,7 +97,6 @@ header {
   padding: 20px 0;
   font-size: 24px;
 }
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -187,7 +188,7 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-  background-color: #005792;
+  background-color: #0abd19;
   color: white;
   border: none;
   cursor: pointer;
@@ -242,7 +243,7 @@ input[type="submit"]:hover {
   max-width: 70%; /* Assicura che non superi la larghezza del contenitore */
 }
 .action-buttons button {
-  background-color: #007bff; /* Colore di sfondo blu */
+  background-color: #00ff15; /* Colore di sfondo blu */
   border: none; /* Nessun bordo */
   color: white; /* Testo bianco */
   padding: 10px 15px; /* Spaziatura interna */
@@ -257,7 +258,7 @@ input[type="submit"]:hover {
 }
 
 .action-buttons button:hover {
-  background-color: #0056b3; /* Colore di sfondo al passaggio del mouse */
+  background-color: #00b32d; /* Colore di sfondo al passaggio del mouse */
   color: white; /* Testo bianco */
 }
 
@@ -267,25 +268,29 @@ input[type="submit"]:hover {
 }
 
 .action-buttons button:nth-child(2):hover {
-  background-color: #c82333; /* Colore di sfondo rosso scuro al passaggio del mouse */
+  background-color: #8b121e; /* Colore di sfondo rosso scuro al passaggio del mouse */
 }
 
 #add-product-btn {
-  background-color: green;
+  background-color: #4CAF50; /* Verde più vivace */
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 9px 17px; /* Più compatto */
+  font-size: 20px; /* Dimensione del testo ridotta */
   border: none;
   cursor: pointer;
-  margin-bottom: 20px; /* Distanza dal titolo della tabella */
+  margin-bottom: 18px; /* Distanza dal titolo della tabella mantenuta */
+  transition: background-color 0.3s, box-shadow 0.2s; /* Transizione fluida */
+  border-radius: 4px; /* Bordi leggermente più arrotondati */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Ombreggiatura più sottile */
+}
+
+#add-product-btn:hover {
+  background-color: #45a049; /* Colore al passaggio del mouse un po' più scuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombreggiatura più pronunciata al passaggio del mouse */
 }
 
 #add-product-btn i {
   margin-right: 5px;
-}
-
-#add-product-btn:hover {
-  background-color: #004d00; /* Un verde leggermente più scuro per l'hover */
 }
 
 #filter-low-stock-btn {

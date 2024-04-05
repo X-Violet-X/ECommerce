@@ -17,6 +17,11 @@ header {
   th, td {
     text-align: left;
     padding: 8px;
+    color: #000;
+  }
+
+  h1{
+    color: #333;
   }
 
   th {
@@ -27,6 +32,7 @@ header {
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+  
   form {
     background-color: #f4f4f4;
     padding: 20px;

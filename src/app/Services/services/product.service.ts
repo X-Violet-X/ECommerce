@@ -32,7 +32,7 @@ export class ProductService {
 
   addProduct(productData: any): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.post<any>(`${this.baseUrl}/api/products`, productData, {headers});
+    return this.http.post<any>(`${this.baseUrl}/api/products/insert`, productData, {headers});
   }
 
   updateProduct(productId: number, productData: any): Observable<any> {

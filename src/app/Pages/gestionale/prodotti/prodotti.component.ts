@@ -40,14 +40,9 @@ export class ProdottiComponent implements OnInit {
 
   caricaOrdini(): void {
 
-    // this.prodottiService.productSubject.subscribe((state: any) => {
-    //   this.prodItem = state.prodotti;
-    //   console.log(this.prodItem);
-    // });
-
     this.apiService.apiGET("http://localhost:5454/products/getAll").subscribe(
       (response: any) => {
-        this.prodItem = response; // Popola l'array di prodotti con i dati ricevuti dalla chiamata API
+        this.prodItem = response; 
       },
       (error: any) => {
         console.log('Errore durante il recupero dei prodotti:', error);
@@ -61,7 +56,7 @@ export class ProdottiComponent implements OnInit {
   }
 
   addProduct(): void {
-    // La logica di aggiunta dovrebbe essere gestita attraverso un form e non tramite prompt
+    
   }
 
   //   filtraEsaurimento(): void {
@@ -90,6 +85,7 @@ export class ProdottiComponent implements OnInit {
   // }
 
   showAddProductForm(){
+    
 
   }
 
